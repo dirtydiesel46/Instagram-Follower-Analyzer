@@ -42,6 +42,9 @@ cd instagram-follower-analyzer
 npm install
 ```
 
+
+Note 3 & 4 can be ignored and you could utilize the FE to upload the raw files from Instagram 
+
 3. Set up your Instagram data:
 
 ```bash
@@ -53,6 +56,7 @@ cp src/data/following/following_example.json src/data/following/following.json
 4. Replace the copied files with your Instagram data:
    - Export your followers list from Instagram and save as `followers_1.json`
    - Export your following list from Instagram and save as `following.json`
+  
 
 Note: The real data files are gitignored to protect your privacy.
 
