@@ -2,6 +2,10 @@
 
 A Vue 3 application that helps you analyze your Instagram followers and following lists to identify non-mutual connections.
 
+<img width="891" alt="image" src="https://github.com/user-attachments/assets/7309af31-635c-4270-ab59-eb41b637f376">
+
+<img width="841" alt="image" src="https://github.com/user-attachments/assets/1798b64d-240f-4791-8c7a-0f55e75c0ffa">
+
 ## Why This Project?
 
 This project was born out of several key considerations:
