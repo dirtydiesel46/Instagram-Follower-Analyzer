@@ -1,0 +1,54 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+build/
+
+# Testing
+coverage/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# IDE and editor files
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Instagram data files
+src/data/followers/followers_1.json
+src/data/following/following.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Local files
+*.local
+
+# Cache
+.cache/
+.temp/
+.eslintcache

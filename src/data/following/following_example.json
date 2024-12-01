@@ -1,0 +1,31 @@
+{
+  "relationships_following": [
+    {
+      "string_list_data": [
+        {
+          "value": "user1",
+          "href": "https://instagram.com/user1",
+          "timestamp": 1704067200
+        }
+      ]
+    },
+    {
+      "string_list_data": [
+        {
+          "value": "user2",
+          "href": "https://instagram.com/user2",
+          "timestamp": 1706745600
+        }
+      ]
+    },
+    {
+      "string_list_data": [
+        {
+          "value": "user3",
+          "href": "https://instagram.com/user3",
+          "timestamp": 1709251200
+        }
+      ]
+    }
+  ]
+}
