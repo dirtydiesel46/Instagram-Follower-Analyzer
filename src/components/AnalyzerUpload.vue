@@ -18,9 +18,10 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { InstagramAnalyzer } from '../utils/instagram-analyzer'
+import type { InstagramData } from '@/types/instagram';
 
-const followersData = ref<any>(null)
-const followingData = ref<any>(null)
+const followersData = ref<InstagramData | null>(null)
+const followingData = ref<InstagramData | null>(null)
 const emit = defineEmits(['analysis-complete'])
 
 const canAnalyze = computed(() => {
@@ -47,8 +48,8 @@ const analyze = () => {
   if (!canAnalyze.value) return
 
   const analyzer = new InstagramAnalyzer(
-    followersData.value.relationships_followers || [],
-    followingData.value.relationships_following || [],
+    followersData.value?.followers || [],
+    followingData.value?.following || [],
   )
 
   const results = analyzer.getNonFollowingBack()

@@ -1,4 +1,5 @@
 declare module '*.json' {
-  const value: any
+  import type { InstagramData } from '@/types/instagram'
+  const value: InstagramData
   export default value
 }

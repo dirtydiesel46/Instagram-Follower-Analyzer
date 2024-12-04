@@ -1,4 +1,4 @@
-import type { InstagramData, InstagramUser, FollowAnalysis } from '@/types/instagram'
+import type { InstagramData, FollowAnalysis } from '@/types/instagram'
 
 export class InstagramAnalysisService {
   constructor(private data: InstagramData) {}

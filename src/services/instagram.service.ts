@@ -2,8 +2,6 @@ import type {
   InstagramData,
   InstagramUser,
   FollowAnalysis,
-  InstagramRawListItem,
-  InstagramRawFollowing
 } from '@/types/instagram'
 
 export class InstagramService {

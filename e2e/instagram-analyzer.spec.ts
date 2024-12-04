@@ -201,9 +201,6 @@ test.describe('Instagram Analyzer', () => {
       await page.landing.selectAppData()
       await page.results.waitForResults()
 
-      // Get initial dates
-      const initialDates = await page.results.getSortedDates()
-
       // Sort ascending
       await page.results.clickSortHeader()
       const ascendingDates = await page.results.getSortedDates()

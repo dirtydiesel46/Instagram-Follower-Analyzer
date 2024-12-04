@@ -1,6 +1,5 @@
 import fs from 'fs'
 import path from 'path'
-import type { InstagramData, ComparisonResult } from './types/instagram'
 import { InstagramAnalyzer } from './utils/instagram-analyzer'
 
 // Read JSON files
