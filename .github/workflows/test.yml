@@ -43,7 +43,7 @@ jobs:
       run: npm run test:unit
       
     - name: Run linting
-      run: npm run lint -- --cache
+      run: npm run lint
 
   e2e-tests:
     runs-on: ubuntu-latest
