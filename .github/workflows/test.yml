@@ -66,15 +66,22 @@ jobs:
       run: npm ci
       
     - name: Cache Playwright ${{ matrix.browser }}
-      uses: actions/cache@v3
+      id: playwright-cache
+      uses: actions/cache@v4
       with:
         path: ~/.cache/ms-playwright
         key: ${{ runner.os }}-playwright-${{ matrix.browser }}-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-playwright-${{ matrix.browser }}-
+          ${{ runner.os }}-playwright-
     
     - name: Install Playwright ${{ matrix.browser }}
+      if: steps.playwright-cache.outputs.cache-hit != 'true'
       run: npx playwright install ${{ matrix.browser }} --with-deps
+    
+    - name: Install Playwright dependencies only
+      if: steps.playwright-cache.outputs.cache-hit == 'true'
+      run: npx playwright install-deps ${{ matrix.browser }}
     
     - name: Run E2E tests
       run: npm run test:e2e -- --project=${{ matrix.browser }}
