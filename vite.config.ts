@@ -6,6 +6,8 @@ import vue from '@vitejs/plugin-vue'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  // Set base path for GitHub Pages repo deployment
+  base: '/Instagram-Follower-Analyzer/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

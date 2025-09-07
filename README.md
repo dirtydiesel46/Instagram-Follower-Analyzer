@@ -72,6 +72,20 @@ Start the development server:
 npm run dev
 ```
 
+## Deployment (GitHub Pages)
+
+This app is configured to deploy to GitHub Pages from `main` using GitHub Actions.
+
+- Public URL: `https://dirtydiesel46.github.io/Instagram-Follower-Analyzer/`
+- Vite `base` is set to `/Instagram-Follower-Analyzer/` in `vite.config.ts`.
+- SPA routing is supported by copying `index.html` to `404.html` on deploy.
+
+Manual deploy steps (if needed):
+
+1) Ensure Pages is enabled: Repo → Settings → Pages → Source: GitHub Actions
+2) Push to `main` and the workflow `.github/workflows/deploy.yml` will build and publish `dist/`.
+3) First publish may take a minute or two to propagate.
+
 ### Available Scripts
 
 - `npm run dev` - Start development server
