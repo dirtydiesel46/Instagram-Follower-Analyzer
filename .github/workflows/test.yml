@@ -20,7 +20,7 @@ jobs:
         cache: 'npm'
     
     - name: Cache TypeScript
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: |
           .tsbuildinfo
@@ -28,7 +28,7 @@ jobs:
         key: ${{ runner.os }}-typescript-${{ hashFiles('**/*.ts', '**/*.vue', 'tsconfig.json') }}
     
     - name: Cache ESLint
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: .eslintcache
         key: ${{ runner.os }}-eslint-${{ hashFiles('.eslintrc.js', '**/*.ts', '**/*.vue') }}
