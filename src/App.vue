@@ -6,7 +6,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import InstagramAnalyzer from './components/InstagramAnalyzer.vue'
 import ConnectionModal from './components/ConnectionModal.vue'
 </script>

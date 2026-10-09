@@ -173,8 +173,7 @@ import type {
   FollowAnalysis,
   InstagramData,
   InstagramRawListItem,
-  InstagramRawFollowing,
-  InstagramUser
+  InstagramRawFollowing
 } from '@/types/instagram'
 import AnalysisResults from './AnalysisResults.vue'
 import ErrorModal from './ErrorModal.vue'
@@ -234,13 +233,6 @@ const closeErrorModal = () => {
   errorModal.value.show = false
 }
 
-// First, let's update the InstagramDataStructure interface
-interface InstagramDataStructure {
-  relationships_followers?: InstagramRawListItem[]
-  relationships_following?: InstagramRawFollowing
-  string_list_data?: Array<{ value: string; href: string }>
-}
-
 // Update the type checking functions
 const isFollowingFile = (data: unknown): boolean => {
   if (typeof data === 'object' && data !== null) {
@@ -273,7 +265,7 @@ const handleFollowersUpload = async (event: Event) => {
     let data: unknown;
     try {
       data = JSON.parse(content);
-    } catch (e) {
+    } catch {
       showError('Invalid File Format', MESSAGES.errors.invalidFile);
       followersFile.value = null;
       parsedFollowers.value = null;
@@ -325,7 +317,7 @@ const handleFollowingUpload = async (event: Event) => {
     let data: unknown;
     try {
       data = JSON.parse(content);
-    } catch (e) {
+    } catch {
       showError('Invalid File Format', MESSAGES.errors.invalidFile);
       followingFile.value = null;
       parsedFollowing.value = null;
@@ -496,11 +488,6 @@ const resetAnalysis = () => {
     const inputs = document.querySelectorAll('input[type="file"]')
     inputs.forEach((input) => ((input as HTMLInputElement).value = ''))
   }
-}
-
-const setDataSource = (source: 'app' | 'upload') => {
-  dataSource.value = source
-  resetUploadState()
 }
 
 const resetUploadState = () => {
