@@ -1,5 +1,6 @@
 import pluginVue from 'eslint-plugin-vue'
-import vueTsEslintConfig from '@vue/eslint-config-typescript'
+import tseslint from 'typescript-eslint'
+import vueParser from 'vue-eslint-parser'
 import pluginVitest from '@vitest/eslint-plugin'
 import pluginPlaywright from 'eslint-plugin-playwright'
 import oxlint from 'eslint-plugin-oxlint'
@@ -17,7 +18,17 @@ export default [
   },
 
   ...pluginVue.configs['flat/essential'],
-  ...vueTsEslintConfig(),
+  ...tseslint.configs.recommended.map((config) => ({
+    ...config,
+    files: ['**/*.{ts,mts,tsx,vue}'],
+  })),
+  {
+    files: ['**/*.vue'],
+    languageOptions: {
+      parser: vueParser,
+      parserOptions: { parser: tseslint.parser },
+    },
+  },
 
   {
     ...pluginVitest.configs.recommended,
