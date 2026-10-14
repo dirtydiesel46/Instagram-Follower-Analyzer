@@ -23,7 +23,7 @@
     "@playwright/test": "^1.63.0",
     "@tsconfig/node22": "^22.0.0",
     "@types/jsdom": "^21.1.7",
-    "@types/node": "^22.9.3",
+    "@types/node": "^26.6.5",
     "@vitejs/plugin-vue": "^6.0.9",
     "@vitest/eslint-plugin": "1.1.10",
     "@vue/eslint-config-prettier": "^10.1.0",
